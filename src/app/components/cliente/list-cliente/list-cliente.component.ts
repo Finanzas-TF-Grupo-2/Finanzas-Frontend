@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { Router } from '@angular/router';
-import { ClientServiceService } from '../../../service/client-service.service';
+import { ClientServiceService } from '../../../service/client-service/client-service.service';
 
 @Component({
   selector: 'app-list-cliente',
@@ -20,8 +20,8 @@ export class ListClienteComponent {
     });
   }
 
-  agregarCompra(personaId: number) {
-    this.router.navigate(['/compra', personaId]);
+  agregarCompra(persona: any) {
+    this.router.navigate(['/compras'], {state: {persona}});
   }
 
   verCompras(personaId: number) {

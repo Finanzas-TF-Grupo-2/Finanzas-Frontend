@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 
-import { ClientServiceService } from '../../../service/client-service.service';
+import { ClientServiceService } from '../../../service/client-service/client-service.service';
 
 @Component({
   selector: 'app-cliente',

@@ -15,7 +15,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 import { ListClienteComponent } from './components/cliente/list-cliente/list-cliente.component';
+import { AddCompraComponent } from './components/compra/add-compra/add-compra.component';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { ListClienteComponent } from './components/cliente/list-cliente/list-cli
     LoginComponent,
     ClienteComponent,
     ListClienteComponent,
+    AddCompraComponent,
 
   ],
   imports: [
@@ -39,7 +42,7 @@ import { ListClienteComponent } from './components/cliente/list-cliente/list-cli
     MatDialogModule,
     MatCardModule,
     MatRadioModule,
-    
+    MatSelectModule
   ],
   providers: [
     provideAnimationsAsync(),
