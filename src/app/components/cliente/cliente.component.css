@@ -1,0 +1,76 @@
+.title {
+    font-family: 'Jura', sans-serif;
+  }
+
+h2{
+    font-family: 'Jura', sans-serif;
+}
+  
+  .container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    font-family: 'Jura', sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    
+  }
+  
+  h2 {
+    font-weight: bold;
+    margin-top: 20px;
+    
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+
+  .direccion {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    width: 40%;
+  }
+  
+  mat-label {
+    font-family: 'Jura', sans-serif;
+  }
+
+
+  .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  
+  .mat-radio-button {
+    margin-right: 10px;
+
+  }
+  
+  button {
+    align-self: center;
+    margin-top: 30px;
+    width: 25%;
+    padding: 20px 40px; /* Ajusta el espaciado interno para agrandar el botón */
+    font-size: 24px; 
+    font-family: 'Jura';
+  }
+  
