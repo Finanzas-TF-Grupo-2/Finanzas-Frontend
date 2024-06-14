@@ -18,6 +18,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { ListClienteComponent } from './components/cliente/list-cliente/list-cliente.component';
 import { AddCompraComponent } from './components/compra/add-compra/add-compra.component';
+import { PagoDialogComponent } from './components/pago/pago-dialog/pago-dialog.component';
+import { PagarCompraComponent } from './components/compra/pagar-compra/pagar-compra.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { AddCompraComponent } from './components/compra/add-compra/add-compra.co
     ClienteComponent,
     ListClienteComponent,
     AddCompraComponent,
+    PagoDialogComponent,
+    PagarCompraComponent,
 
   ],
   imports: [

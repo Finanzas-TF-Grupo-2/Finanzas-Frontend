@@ -14,7 +14,7 @@ export class LoginComponent {
 
   onLogin(){
     
-    this.router.navigate(['/clientes']);
+    this.router.navigate(['/add-cliente']);
   }
 
 }

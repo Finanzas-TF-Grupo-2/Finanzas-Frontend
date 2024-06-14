@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Pagar Compra</h1>
+<div mat-dialog-content>
+  <p>Compra: {{data.compra.id}}</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Monto a Pagar</mat-label>
+    <input matInput [(ngModel)]="data.montoFinal" type="number">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onPagar()">Pagar</button>
+</div>

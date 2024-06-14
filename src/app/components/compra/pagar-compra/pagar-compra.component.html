@@ -1,0 +1,31 @@
+<h2>Detalles del Cliente</h2>
+<p>Nombre: {{ persona?.nombre }}</p>
+<p>Límite de Crédito: {{ persona?.credito?.saldo }}</p>
+
+<h2>Compras</h2>
+<table mat-table [dataSource]="compras" class="mat-elevation-z8">
+  <ng-container matColumnDef="numeroCompra">
+    <th mat-header-cell *matHeaderCellDef> Número de Compra </th>
+    <td mat-cell *matCellDef="let compra"> {{ compra.id }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreProducto">
+    <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+    <td mat-cell *matCellDef="let compra"> {{ compra.producto.nombre }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="precioProducto">
+    <th mat-header-cell *matHeaderCellDef> Precio del Producto </th>
+    <td mat-cell *matCellDef="let compra"> {{ compra.montoFinal| currency }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let compra">
+      <button mat-button color="primary" (click)="openPagoDialog(compra)">Pagar</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['numeroCompra', 'nombreProducto', 'precioProducto', 'acciones']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['numeroCompra', 'nombreProducto', 'precioProducto', 'acciones'];"></tr>
+</table>

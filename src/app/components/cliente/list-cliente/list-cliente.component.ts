@@ -24,8 +24,8 @@ export class ListClienteComponent {
     this.router.navigate(['/compras'], {state: {persona}});
   }
 
-  verCompras(personaId: number) {
-    this.router.navigate(['/compras', personaId]);
+  verCompras(persona: any) {
+    this.router.navigate(['/pagar-compra', persona.id]);
   }
 
 }

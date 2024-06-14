@@ -9,6 +9,7 @@ export class CompraServiceService {
 
   private apiUrl = 'http://localhost:8080/api/compra';
   private apiUrlP = 'http://localhost:8080/api/producto';
+  private apiUrlPer = 'http://localhost:8080/api/persona';
 
   constructor(private http: HttpClient) {}
 
@@ -20,10 +21,14 @@ export class CompraServiceService {
     return this.http.get<any[]>(`${this.apiUrl}/persona/${personaId}`);
   }
 
-  pagarCompra(compraId: number, monto: number): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${compraId}/pagar`, { monto });
+  pagarCompra(compraId: number, montoFinal: number): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${compraId}/pagar`, { montoFinal });
   }
   getAllProductos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrlP}/productos`);
   }
+  getClientbyId(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrlPer}/${id}`);
+  }
+
 }
