@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-nabvar',
+  templateUrl: './nabvar.component.html',
+  styleUrl: './nabvar.component.css'
 })
-export class LoginComponent {
+export class NabvarComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
   ) {}
 
-  onLogin(){
-    
+  ngOnInit(){
+    console.log('Nabvar');
+  }
+
+  Home(){
     this.router.navigate(['/home']);
+
   }
 
 }

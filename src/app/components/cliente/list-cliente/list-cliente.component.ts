@@ -28,4 +28,8 @@ export class ListClienteComponent {
     this.router.navigate(['/pagar-compra', persona.id]);
   }
 
+  verReporte(persona: any) {
+    this.router.navigate(['/cliente-resumen', persona.id]);
+  }
+
 }

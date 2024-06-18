@@ -1,21 +1,82 @@
-.box{
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 40px;
-    background: #D0D0D0;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.form{
+.persona-form {
+    padding: 20px;
+    margin:0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    font-family: 'Jura', sans-serif;
+    background-color: #D0D0D0;
+  }
+
+  .title {
+    font-family: 'Jura', sans-serif;
+  }
+
+h2{
+    font-family: 'Jura', sans-serif;
+}
+  
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    
+  }
+  
+  h2 {
+    font-weight: bold;
+    margin-top: 20px;
+    
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
 
-}
+  .long-input {
+    width: 100%;
+  }
+  .center-input{
+    justify-content: center;
+  }
+  
+  mat-form-field {
+    width: 40%;
+  }
+  
+  mat-label {
+    font-family: 'Jura', sans-serif;
+  }
+
+
+  .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  
+  .mat-radio-button {
+    margin-right: 10px;
+
+  }
+  
+  button {
+    align-self: center;
+    margin-top: 30px;
+    width: 25%;
+    padding: 20px 40px; 
+    font-size: 24px; 
+    font-family: 'Jura';
+  }
 

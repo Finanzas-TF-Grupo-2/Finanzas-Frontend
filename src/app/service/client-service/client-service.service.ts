@@ -24,4 +24,7 @@ export class ClientServiceService {
   registerPersona(persona: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, persona);
   }
+  getPersonaById(id: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

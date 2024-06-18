@@ -16,10 +16,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 import { ListClienteComponent } from './components/cliente/list-cliente/list-cliente.component';
 import { AddCompraComponent } from './components/compra/add-compra/add-compra.component';
 import { PagoDialogComponent } from './components/pago/pago-dialog/pago-dialog.component';
 import { PagarCompraComponent } from './components/compra/pagar-compra/pagar-compra.component';
+import { NabvarComponent } from './components/header/nabvar/nabvar.component';
+import { HomeComponent } from './components/header/home/home.component';
+import { ClienteResumenComponent } from './components/cliente/cliente-resumen/cliente-resumen.component';
 
 
 @NgModule({
@@ -31,6 +36,9 @@ import { PagarCompraComponent } from './components/compra/pagar-compra/pagar-com
     AddCompraComponent,
     PagoDialogComponent,
     PagarCompraComponent,
+    NabvarComponent,
+    HomeComponent,
+    ClienteResumenComponent,
 
   ],
   imports: [
@@ -46,7 +54,9 @@ import { PagarCompraComponent } from './components/compra/pagar-compra/pagar-com
     MatDialogModule,
     MatCardModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [
     provideAnimationsAsync(),

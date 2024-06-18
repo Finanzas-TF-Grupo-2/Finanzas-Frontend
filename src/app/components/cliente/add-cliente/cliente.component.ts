@@ -42,7 +42,7 @@ export class ClienteComponent {
   onSubmit() {
     this.personaService.registerPersona(this.persona).subscribe(response => {
       console.log('Persona creada:', response);
-      this.router.navigate(['/personas']);
+      this.router.navigate(['/home']);
     });
   }
 
