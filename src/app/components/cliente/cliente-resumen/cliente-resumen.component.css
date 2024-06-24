@@ -40,3 +40,12 @@
     background-color: #f1f1f1;
   }
   
+  .example-month-picker .mat-calendar-period-button {
+    pointer-events: none;
+  }
+  
+  .example-month-picker .mat-calendar-previous-button,
+  .example-month-picker .mat-calendar-next-button {
+    display: none;
+  }
+  

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CompraServiceService } from '../../../service/compra/compra-service.service';
 import { ClientServiceService } from '../../../service/client-service/client-service.service';
 import { ExcelServiceService } from '../../../service/excel/excel-service.service';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-cliente-resumen',
@@ -12,7 +13,9 @@ import { ExcelServiceService } from '../../../service/excel/excel-service.servic
 export class ClienteResumenComponent implements OnInit{
   persona: any;
   compras: any[] = [];
-  displayedColumnsCompras: string[] = ['producto', 'fechaCompra', 'montoFinal', 'paid'];
+  filteredCompras: any[] = [];
+  selectedMonth: Date = new Date();
+ // displayedColumnsCompras: string[] = ['producto', 'fechaCompra', 'montoFinal', 'paid'];
 
   constructor(
     private route: ActivatedRoute,
@@ -29,7 +32,9 @@ export class ClienteResumenComponent implements OnInit{
       });
       this.compraService.getComprasByPersonaId(personaId).subscribe(compras => {
         this.compras = compras;
+        this.filteredCompras = compras;
       });
+
     });
   }
 
@@ -50,6 +55,34 @@ export class ClienteResumenComponent implements OnInit{
     }];
     
     this.excelService.exportAsExcelFile([...personaData, ...exportData], 'Resumen_Cliente');
+  }
+
+  filterByMonth(date: Date) {
+    if (date) {
+      const selectedMonth = date.getMonth();
+      const selectedYear = date.getFullYear();
+
+      this.filteredCompras = this.compras.filter(compra => {
+        const compraDate = new Date(compra.fechaCompra);
+        return compraDate.getMonth() === selectedMonth && compraDate.getFullYear() === selectedYear;
+      });
+    } else {
+      this.filteredCompras = this.compras;
+    }
+  }
+
+  chosenYearHandler(selectedYear: Date, datepicker: MatDatepicker<any>) {
+    const valueYear = this.selectedMonth || new Date();
+    valueYear.setFullYear(selectedYear.getFullYear());
+    this.selectedMonth = valueYear;
+  }
+
+  chosenMonthHandler(Month: Date, datepicker: MatDatepicker<any>) {
+    const valueMonth = this.selectedMonth || new Date();
+    valueMonth.setMonth(Month.getMonth());
+    this.selectedMonth = valueMonth;
+    this.filterByMonth(this.selectedMonth);
+    datepicker.close();
   }
 
 }

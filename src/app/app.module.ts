@@ -46,6 +46,7 @@ import { ListProductoComponent } from './components/producto/list-producto/list-
     AddProductoComponent,
     ListProductoComponent,
 
+
   ],
   imports: [
     BrowserModule,
