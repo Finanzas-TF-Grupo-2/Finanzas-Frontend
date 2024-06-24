@@ -22,4 +22,10 @@ export class NabvarComponent {
 
   }
 
+  AddProduct(){
+    this.router.navigate(['/productos']);
+
+  }
+
+
 }

@@ -7,6 +7,8 @@ import { AddCompraComponent } from './components/compra/add-compra/add-compra.co
 import { PagarCompraComponent } from './components/compra/pagar-compra/pagar-compra.component';
 import { HomeComponent } from './components/header/home/home.component';
 import { ClienteResumenComponent } from './components/cliente/cliente-resumen/cliente-resumen.component';
+import { AddProductoComponent } from './components/producto/add-producto/add-producto.component';
+import { ListProductoComponent } from './components/producto/list-producto/list-producto.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,7 +18,9 @@ const routes: Routes = [
     { path: 'clientes', component: ListClienteComponent },
     { path: 'compras', component: AddCompraComponent },
     {path: 'pagar-compra/:id', component: PagarCompraComponent},
-    {path: 'cliente-resumen/:id', component: ClienteResumenComponent}
+    {path: 'cliente-resumen/:id', component: ClienteResumenComponent},
+    {path: 'add-producto', component: AddProductoComponent},
+    {path: 'productos', component: ListProductoComponent}
 ];
 
 @NgModule({

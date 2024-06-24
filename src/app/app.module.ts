@@ -18,6 +18,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { ListClienteComponent } from './components/cliente/list-cliente/list-cliente.component';
 import { AddCompraComponent } from './components/compra/add-compra/add-compra.component';
 import { PagoDialogComponent } from './components/pago/pago-dialog/pago-dialog.component';
@@ -25,6 +27,8 @@ import { PagarCompraComponent } from './components/compra/pagar-compra/pagar-com
 import { NabvarComponent } from './components/header/nabvar/nabvar.component';
 import { HomeComponent } from './components/header/home/home.component';
 import { ClienteResumenComponent } from './components/cliente/cliente-resumen/cliente-resumen.component';
+import { AddProductoComponent } from './components/producto/add-producto/add-producto.component';
+import { ListProductoComponent } from './components/producto/list-producto/list-producto.component';
 
 
 @NgModule({
@@ -39,6 +43,8 @@ import { ClienteResumenComponent } from './components/cliente/cliente-resumen/cl
     NabvarComponent,
     HomeComponent,
     ClienteResumenComponent,
+    AddProductoComponent,
+    ListProductoComponent,
 
   ],
   imports: [
@@ -56,7 +62,9 @@ import { ClienteResumenComponent } from './components/cliente/cliente-resumen/cl
     MatRadioModule,
     MatSelectModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     provideAnimationsAsync(),

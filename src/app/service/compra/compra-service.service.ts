@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class CompraServiceService {
 
-  private apiUrl = 'http://localhost:8080/api/compra';
-  private apiUrlP = 'http://localhost:8080/api/producto';
-  private apiUrlPer = 'http://localhost:8080/api/persona';
+  private apiUrl = 'https://credibarrio.zeabur.app/api/compra';
+  private apiUrlP = 'https://credibarrio.zeabur.app/api/producto';
+  private apiUrlPer = 'https://credibarrio.zeabur.app/api/persona';
 
   constructor(private http: HttpClient) {}
 

@@ -19,7 +19,7 @@ export class AddCompraComponent implements OnInit{
     },
     pagoEnCuotas: false,
     numeroCuotas: 0,
-    fechaCompra: new Date().toISOString().split('T')[0], // Default to today's date
+    fechaCompra: '', 
     montoFinal: 0
   };
 
