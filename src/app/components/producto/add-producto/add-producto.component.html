@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Agregar Producto</h2>
+    <form (ngSubmit)="agregarProducto()">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre del Producto</mat-label>
+          <input matInput [(ngModel)]="producto.nombre" name="nombre" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Costo</mat-label>
+          <input matInput type="number" [(ngModel)]="producto.costo" name="costo" required>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit">Agregar Producto</button>
+    </form>
+  </div>
+  

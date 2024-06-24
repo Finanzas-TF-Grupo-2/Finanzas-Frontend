@@ -1,0 +1,40 @@
+<div>
+    <h2>Agregar Compra</h2>
+    <form (ngSubmit)="agregarCompra()">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Producto</mat-label>
+          <mat-select [(ngModel)]="compra.producto.id" name="producto" (selectionChange)="onProductoChange($event.value)" required>
+            <mat-option *ngFor="let producto of productos" [value]="producto.id">
+              {{ producto.nombre }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Costo</mat-label>
+          <input matInput type="number" [(ngModel)]="compra.producto.costo" name="costo" [readonly]="true">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-checkbox [(ngModel)]="compra.pagoEnCuotas" name="pagoEnCuotas">Pago en Cuotas</mat-checkbox>
+      </div>
+      <div *ngIf="compra.pagoEnCuotas">
+        <mat-form-field appearance="fill">
+          <mat-label>Número de Cuotas</mat-label>
+          <input matInput type="number" [(ngModel)]="compra.numeroCuotas" name="numeroCuotas" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Compra</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="compra.fechaCompra" name="fechaCompra" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit">Agregar Compra</button>
+    </form>
+  </div>
+  

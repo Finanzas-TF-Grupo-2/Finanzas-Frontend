@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Detalles del Cliente</h2>
+  <p>Nombre: {{ persona?.nombre }}</p>
+  <p>Límite de Crédito: {{ persona?.credito?.saldo | currency:'S/ '  }}</p>
+  <h2>Compras</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Filtrar por Fecha</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedMonth" (ngModelChange)="filterByMonth($event.value)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker startView="multi-year" (yearSelected)="chosenYearHandler($event, picker)" (monthSelected)="chosenMonthHandler($event, picker)" panelClass="month-picker"></mat-datepicker>
+    
+  </mat-form-field>
+
+  <table mat-table [dataSource]="filteredCompras" class="mat-elevation-z8">
+    <ng-container matColumnDef="numeroCompra">
+      <th mat-header-cell *matHeaderCellDef> Número de Compra </th>
+      <td mat-cell *matCellDef="let compra"> {{ compra.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombreProducto">
+      <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+      <td mat-cell *matCellDef="let compra"> {{ compra.producto.nombre }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaCompra">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Compra </th>
+      <td mat-cell *matCellDef="let compra"> {{ compra.fechaCompra | date }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precioProducto">
+      <th mat-header-cell *matHeaderCellDef> Deuda a día de hoy </th>
+      <td mat-cell *matCellDef="let compra"> 
+        {{ compra.pagoEnCuotas ? compra.montoCuotaFinal : compra.montoFinal }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cuotas">
+      <th mat-header-cell *matHeaderCellDef> Cuotas </th>
+      <td mat-cell *matCellDef="let compra">
+        {{ compra.pagoEnCuotas ? compra.numeroCuotas : 0 }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaPago">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Pago </th>
+      <td mat-cell *matCellDef="let compra"> {{ compra.fechaPago | date }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let compra">
+        <button mat-button color="primary" (click)="openPagoDialog(compra)">Pagar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['numeroCompra', 'nombreProducto', 'precioProducto','fechaCompra','cuotas' ,'fechaPago' ,'acciones']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['numeroCompra', 'nombreProducto', 'precioProducto', 'fechaCompra','cuotas','fechaPago' , 'acciones'];"></tr>
+  </table>
+
+</div>
