@@ -1,1 +1,15 @@
-<p>login works!</p>
+<link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
+<div class="box">
+    <h2>CrediBarrio</h2>
+    <form class="form-class" >
+        <mat-form-field>
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput placeholder="Nombre de Usuario" name="username" [(ngModel)]="username">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput placeholder="Contraseña" type="password" name="password" [(ngModel)]="password">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="onLogin()">Iniciar Sesion</button>
+</div>
