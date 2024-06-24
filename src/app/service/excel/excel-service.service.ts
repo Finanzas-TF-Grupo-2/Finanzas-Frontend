@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +18,18 @@ export class ExcelServiceService {
 
   private saveAsExcelFile(buffer: any, fileName: string): void {
     const data: Blob = new Blob([buffer], { type: EXCEL_TYPE });
-    saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+
+    // Verificar si navigator.msSaveBlob está definido para Internet Explorer y Edge
+    if ((navigator as any).msSaveBlob) {
+      (navigator as any).msSaveBlob(data, fileName + EXCEL_EXTENSION);
+    } else {
+      // Para otros navegadores
+      const anchor = document.createElement('a');
+      anchor.href = window.URL.createObjectURL(data);
+      anchor.download = fileName + EXCEL_EXTENSION;
+      anchor.click();
+      window.URL.revokeObjectURL(anchor.href);
+    }
   }
 }
 

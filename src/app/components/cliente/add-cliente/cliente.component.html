@@ -63,7 +63,13 @@
       
             <mat-form-field>
               <mat-label>Frecuencia de Tasa</mat-label>
-              <input matInput [(ngModel)]="persona.credito.frecuenciaPago" name="frecuenciaPago">
+              <mat-select [(ngModel)]="persona.credito.frecuenciaPago" name="frecuenciaPago">
+                <mat-option value="MENSUAL">Mensual</mat-option>
+                <mat-option value="TRIMESTRAL">Trimestral</mat-option>
+                <mat-option value="SEMESTRAL">Semestral</mat-option>
+                <mat-option value="ANUAL">Anual</mat-option>
+                <mat-option value="CUATRIMESTRAL">Anual</mat-option>
+              </mat-select>
             </mat-form-field>
 
           </div>
